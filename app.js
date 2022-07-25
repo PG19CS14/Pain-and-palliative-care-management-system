@@ -6,6 +6,7 @@ var logger = require('morgan');
 var db= require('./config/connection');
 
 var indexRouter = require('./routes/index');
+
 var adminRouter = require('./routes/admin');
 var hpRouter = require('./routes/hp');
 var patientRouter = require('./routes/patient');

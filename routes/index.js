@@ -11,7 +11,14 @@ router.get('/login', function(req, res, next) {
 router.get('/register', function(req, res, next) {
   res.render('register', { title: 'P-Care' });
 });
+
 router.get('/donation', function(req, res, next) {
   res.render('donation', { title: 'P-Care' });
 });
+router.post('/submit',function(req,res){
+  console.log(req.body)
+  res.send("Donated successfully")
+
+})
+
 module.exports = router;

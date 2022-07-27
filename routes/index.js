@@ -1,4 +1,6 @@
 var express = require('express');
+const donationHelp = require('../helpers/donation-help');
+var db=require('../config/connection')
 var router = express.Router();
 
 /* GET home page. */
@@ -17,7 +19,10 @@ router.get('/donation', function(req, res, next) {
 });
 router.post('/submit',function(req,res){
   console.log(req.body)
-  res.send("Donated successfully")
+  donationHelp.addDonate(req.body,(result)=>{
+    res.send("Donation successfull");
+  })
+   
 
 })
 
